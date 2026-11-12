@@ -8,6 +8,7 @@ dependencies = [
     "httpx>=0.28.1",
     "pydantic>=2.14.3",
     "pydantic-settings>=2.16.2",
+    "selectolax>=1.0.2",
 ]
 
 [project.scripts]
@@ -23,6 +24,9 @@ extend-exclude = ["*.md"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]  # в тестах длинные строки — это образцы HTML
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
